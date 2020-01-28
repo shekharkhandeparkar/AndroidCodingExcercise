@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Android Coding Exercise</string>
+
+    <string name="feed_error">Feed Error</string>
+</resources>

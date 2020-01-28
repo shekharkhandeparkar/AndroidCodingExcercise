@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="co.shekhar.androidcodingexercise.ui.FeedViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/item_gradient"
+        android:orientation="vertical"
+        android:padding="@dimen/feed_row_margin_start">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:text="@string/app_name"
+            android:textColor="@color/colorTextBlue"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/ivImageHref"
+            app:layout_constraintTop_toTopOf="parent"
+            app:mutableText="@{viewModel.getFeedTitle()}" />
+
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_left_side"
+            android:layout_marginRight="@dimen/margin_left_side"
+            android:maxLines="3"
+            android:textColor="@color/colorBlack"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+            app:mutableText="@{viewModel.getFeedDescription()}" />
+
+        <ImageView
+            android:id="@+id/ivImageHref"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/black"
+            android:contentDescription="@string/app_name"
+            android:minHeight="80dp"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintEnd_toStartOf="@+id/ivArrow"
+            app:layout_constraintStart_toEndOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+            app:mutableImage="@{viewModel.getFeedImageHref()}" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.6" />
+
+        <ImageView
+            android:id="@+id/ivArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_arrow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

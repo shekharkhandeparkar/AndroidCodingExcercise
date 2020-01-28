@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="feed_row_margin_start">12dp</dimen>
+    <dimen name="min_image_height">100dp</dimen>
+    <dimen name="margin_left_side">4dp</dimen>
+</resources>
